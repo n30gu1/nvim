@@ -1,8 +1,6 @@
 local keymap = vim.keymap.set
 local silent = { silent = true }
 
-table.unpack = table.unpack or unpack -- 5.1 compatibility
-
 -- Better window movement
 keymap("n", "<C-h>", "<C-w>h", silent)
 keymap("n", "<C-j>", "<C-w>j", silent)

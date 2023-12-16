@@ -28,7 +28,6 @@ local function create_blame_win()
   local buf = vim.api.nvim_get_current_buf()
 
   vim.api.nvim_buf_set_option(buf, "buftype", "nofile")
-  vim.api.nvim_buf_set_option(buf, "swapfile", false)
   vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe")
   vim.api.nvim_buf_set_option(buf, "filetype", "GitBlame")
   vim.api.nvim_buf_set_option(buf, "buflisted", false)
