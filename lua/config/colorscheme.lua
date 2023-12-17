@@ -16,7 +16,7 @@ tokyonight.setup({
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value `:help attr-list`
     comments = "NONE",
-    keywords = "italic",
+    keywords = "bold",
     functions = "NONE",
     variables = "NONE",
     -- Background styles. Can be "dark", "transparent" or "normal"

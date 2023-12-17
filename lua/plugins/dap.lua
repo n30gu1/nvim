@@ -163,6 +163,14 @@ local exts = {
 for i, ext in ipairs(exts) do
   dap.configurations[ext] = {
     {
+      type = "pwa-node",
+      request = "launch",
+      name = "Run React Native Project",
+      cwd = vim.fn.getcwd(),
+      runtimeExecutable = "npx",
+      runtimeArgs = { "react-native", "start" },
+    },
+    {
       type = "pwa-chrome",
       request = "launch",
       name = "Launch Chrome with \"localhost\"",
