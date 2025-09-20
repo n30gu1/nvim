@@ -1013,6 +1013,26 @@ require('lazy').setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
-vim.g.ts = 2
-vim.g.sts = 2
-vim.g.sw = 2
+-- Set tab width and behavior
+vim.opt.tabstop = 4 -- number of visual spaces per TAB
+vim.opt.shiftwidth = 4 -- number of spaces to use for each step of (auto)indent
+vim.opt.softtabstop = 4 -- number of spaces inserted/deleted when hitting TAB/BS
+vim.opt.expandtab = true -- convert tabs to spaces
+-- Example: per-filetype tab settings
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'javascript', 'typescript', 'lua', 'json', 'typescriptreact' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'python' },
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
